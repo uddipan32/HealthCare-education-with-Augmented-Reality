@@ -1,0 +1,70 @@
+{
+  materials: [
+    {
+      name: 'Digestive_System',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'DigestiveSystem_diffuse',
+        },
+        {
+          normalMap: 'DigestiveSystem_bump',
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/Digestive-system/digestive_system.fbx',
+    name: 'digestive_system',
+  },
+  samplers: [
+    {
+      file: 'sampledata/Digestive-system/DigestiveSystem_diffuse.jpg',
+      name: 'DigestiveSystem_diffuse',
+      pipeline_name: 'sampledata/Digestive-system/DigestiveSystem_diffuse.jpg'
+    },
+    {
+      file: 'sampledata/Digestive-system/DigestiveSystem_bump.jpg',
+      name: 'DigestiveSystem_bump',
+      params: {
+        usage_type: 'Normal',
+      },
+      pipeline_name: 'sampledata/Digestive-system/DigestiveSystem_bump.jpg'
+    },
+  ],
+  version: '0.54:2',
+}

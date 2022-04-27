@@ -1,0 +1,62 @@
+{
+  materials: [
+    {
+      name: 'BRAIN_TEXTURE_blinn2',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'brain_tex',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/Brain/Brain_Model.fbx',
+    name: 'Brain_Model',
+  },
+  samplers: [
+    {
+      file: 'sampledata/Brain/brain_tex.jpg',
+      name: 'brain_tex',
+      pipeline_name: 'brain_tex.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

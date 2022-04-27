@@ -1,0 +1,104 @@
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterRoot = localProperties.getProperty('flutter.sdk')
+if (flutterRoot == null) {
+    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+apply plugin: 'com.google.ar.sceneform.plugin'
+
+android {
+    compileSdkVersion 31
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+
+    defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId "com.example.learn_ar_flutter"
+        minSdkVersion 24
+        targetSdkVersion 29
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.13.0'
+    implementation 'com.google.ar.sceneform:core:1.13.0'
+    implementation 'com.google.ar:core:1.13.0'
+}
+
+
+sceneform.asset('sampledata/Arm/scene.sfa',
+        'src/main/assets/armModel')
+
+sceneform.asset('sampledata/Brain/scene.sfa',
+        'src/main/assets/brainModel')
+
+sceneform.asset('sampledata/Foot_Skeleton/scene.sfa',
+        'src/main/assets/footModel')
+
+sceneform.asset('sampledata/Tooth/scene.sfa',
+        'src/main/assets/toothModel')
+
+sceneform.asset('sampledata/Teeth/scene.sfa',
+        'src/main/assets/teethModel')
+
+sceneform.asset('sampledata/Heart/scene.sfa',
+        'src/main/assets/heartModel')
+
+sceneform.asset('sampledata/Lungs/scene.sfa',
+        'src/main/assets/lungsModel')
+
+sceneform.asset('sampledata/Kidney/scene.sfa',
+        'src/main/assets/kidneyModel')
+
+sceneform.asset('sampledata/Digestive-system/scene.sfa',
+        'src/main/assets/digestiveModel')

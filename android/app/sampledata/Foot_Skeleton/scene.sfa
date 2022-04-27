@@ -1,0 +1,54 @@
+{
+  materials: [
+    {
+      name: 'BEIGE MATTE',
+      parameters: [
+        {
+          baseColor: [
+            0.50588200000000005,
+            0.36078399999999999,
+            0.22745099999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/Foot_Skeleton/foot.fbx',
+    name: 'foot',
+  },
+  version: '0.54:2',
+}

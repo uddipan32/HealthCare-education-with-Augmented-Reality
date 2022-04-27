@@ -1,0 +1,54 @@
+{
+  materials: [
+    {
+      name: 'Default',
+      parameters: [
+        {
+          baseColor: [
+            0.69999999999999996,
+            0.69999999999999996,
+            0.69999999999999996,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/Arm/arm.fbx',
+    name: 'arm',
+  },
+  version: '0.54:2',
+}
